@@ -1,5 +1,5 @@
 # Bayesian-LSTM-Forecasting-for-the-AirQualityUCI-Dataset
-This repository contains code for a Bayesian LSTM model applied to air quality time series forecasting. 
+#This repository contains code for a Bayesian LSTM model applied to air quality time series forecasting. 
 
 
 
