@@ -6,3 +6,4 @@ torch==2.7.1
 pyro-ppl==1.9.1
 plotly==6.1.2
 dash==3.0.4
+gunicorn
