@@ -638,3 +638,7 @@ app.layout = html.Div(style={
 #     print("Open your web browser and navigate to http://127.0.0.1:8050/ to view the dashboard.")
 #     app.run(debug=False, port=int(os.environ.get("PORT", 8050)))
 
+server = app.server  # <- This is key for deployment with gunicorn
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
