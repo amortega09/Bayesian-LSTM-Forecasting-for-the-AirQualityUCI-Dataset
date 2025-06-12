@@ -12,7 +12,7 @@ import pyro
 import pyro.distributions as dist
 from pyro.infer import SVI, Trace_ELBO
 from pyro.optim import Adam
-
+import os
 # Import Plotly and Dash libraries for interactive dashboard creation
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -633,5 +633,5 @@ app.layout = html.Div(style={
 ])
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000))  # Render sets this
+    port = int(os.environ.get("PORT", 8050))  # Render sets this
     app.run_server(host='0.0.0.0', port=port, debug=True)
