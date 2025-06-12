@@ -632,6 +632,11 @@ app.layout = html.Div(style={
     )
 ])
 
+# Configure port for both development and production
+port = int(os.environ.get("PORT", 10000))  # Use Render's default port
+
+# Your app layout and callbacks go here...
+
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8050))  # Render sets this
+    # This only runs in development
     app.run_server(host='0.0.0.0', port=port, debug=True)
