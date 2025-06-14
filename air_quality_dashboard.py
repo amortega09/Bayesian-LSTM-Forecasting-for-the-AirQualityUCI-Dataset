@@ -633,14 +633,8 @@ app.layout = html.Div(style={
 ])
 
 # Configure port for both development and production
-port = int(os.environ.get("PORT", 10000))  # Use Render's default port
-
-# Your app layout and callbacks go here...
+port = int(os.environ.get("PORT", 10000))  # Use Render's PORT or default to 10000
 
 if __name__ == '__main__':
-    # For local development only
-    app.run_server(host='0.0.0.0', port=port, debug=True)
-else:
-    # For production (Render deployment with Gunicorn)
-    import gunicorn
-    # Gunicorn will use the PORT environment variable set by Render
+    # Local development only
+    app.run_server(host='0.0.0.0', port=port, debug=False)  # debug=False for production-like testing
