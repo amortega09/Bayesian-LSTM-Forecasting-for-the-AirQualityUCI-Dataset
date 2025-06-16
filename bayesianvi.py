@@ -473,3 +473,26 @@ print(f"Points with high total uncertainty: {high_uncertainty_points} ({high_unc
 
 print(f"\nFirst few outliers detected:")
 print(outlier_info.head())
+
+
+import joblib
+import os
+
+# Create a directory to save the model and scalers if it doesn't exist
+save_dir = 'model_and_scalers'
+os.makedirs(save_dir, exist_ok=True)
+
+# Save the Bayesian LSTM model
+model_path = os.path.join(save_dir, 'bayesian_lstm_model.pth')
+torch.save(bayesian_lstm.state_dict(), model_path)
+print(f"\nBayesian LSTM model saved to {model_path}")
+
+# Save the xscaler
+xscaler_path = os.path.join(save_dir, 'xscaler.joblib')
+joblib.dump(xscaler, xscaler_path)
+print(f"XScaler saved to {xscaler_path}")
+
+# Save the yscaler
+yscaler_path = os.path.join(save_dir, 'yscaler.joblib')
+joblib.dump(yscaler, yscaler_path)
+print(f"YScaler saved to {yscaler_path}")
